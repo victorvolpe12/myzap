@@ -17,7 +17,7 @@ app.use(express.json({
     extended: true
 }));
 
-var appPort = process.env.PORT ? process.env.PORT : 3333;
+var appPort = process.env.PORT ? process.env.PORT : 80;
 
 if (process.env.HTTPS == 1) { //with ssl
     https.createServer(
