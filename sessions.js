@@ -47,7 +47,6 @@ module.exports = class Sessions {
     static async addSesssion(sessionName) {
         var newSession = {
             name: sessionName,
-            headless: false,
             hook: null,
             qrcode: false,
             client: false,
@@ -96,7 +95,7 @@ module.exports = class Sessions {
                     console.log('#### status=' + statusSession + ' sessionName=' + session);
                 }, {
                 folderNameToken: 'tokens',
-                headless: true,
+                headless: false,
                 devtools: false,
                 useChrome: false,
                 debug: false,
