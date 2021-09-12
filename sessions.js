@@ -47,6 +47,7 @@ module.exports = class Sessions {
     static async addSesssion(sessionName) {
         var newSession = {
             name: sessionName,
+            headless: false,
             hook: null,
             qrcode: false,
             client: false,
