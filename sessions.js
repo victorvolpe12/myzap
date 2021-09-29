@@ -486,9 +486,16 @@ module.exports = class Sessions {
         var session = Sessions.getSession(sessionName);
         if (session) {
             if (session.state == "CONNECTED") {
+                try{
                 var resultSendVoice = await session.client.then(async (client) => {
                     return await client.sendVoiceBase64(number + '@c.us', voice);
-                }); //client.then(
+                });
+                }catch(e){
+                    return {
+                        result: "Erro ao Enviar"
+                    }
+                }
+                //client.then(
                 return {
                     result: "success"
                 };
