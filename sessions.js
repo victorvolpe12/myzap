@@ -342,11 +342,18 @@ module.exports = class Sessions {
         var session = Sessions.getSession(params.sessionName);
         if (session) {
             if (session.state == "CONNECTED") {
+                try{
                 await session.client.then(async client => {
                     console.log('#### send msg =', params);
                     return await client.sendText(params.number + '@c.us', params.text);
+               
                 });
                 return { result: "success" }
+                     }catch(e){
+                    return {
+                        result: "Erro ao Enviar"
+                    }
+                }
             } else {
                 return { result: "error", message: session.state };
             }
