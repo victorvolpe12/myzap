@@ -630,7 +630,7 @@ module.exports = class Sessions {
                 };
                 }catch(e){
                      return {
-           result: "error",
+           result:{numberExists:0},
            message: "NUMERO INCORRETO"
                      }
        }
