@@ -629,8 +629,10 @@ module.exports = class Sessions {
                     result: resultcheckNumberStatus
                 };
                 }catch(e){
+                     return {
            result: "error",
            message: "NUMERO INCORRETO"
+                     }
        }
                 
             } else {
