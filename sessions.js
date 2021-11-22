@@ -639,11 +639,14 @@ module.exports = class Sessions {
                 result: "error",
                 message: "NOTFOUND"
             };
-        }
-       }catch(e){
+            
+         }catch(e){
            result: "error",
            message: "NUMERO INCORRETO"
        }
+            
+        }
+   
     } //saber se o número é válido
 
     static async getNumberProfile(sessionName, number) {
