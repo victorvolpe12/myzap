@@ -621,6 +621,7 @@ module.exports = class Sessions {
         //console.log(sessionName+number);
         if (session) {
             if (session.state == "CONNECTED") {
+                try{
                 var resultcheckNumberStatus = await session.client.then(async (client) => {
                     return await client.checkNumberStatus(number + '@c.us');
                 });
@@ -639,6 +640,10 @@ module.exports = class Sessions {
                 message: "NOTFOUND"
             };
         }
+       }catch(e){
+           result: "error",
+           message: "NUMERO INCORRETO"
+       }
     } //saber se o número é válido
 
     static async getNumberProfile(sessionName, number) {
