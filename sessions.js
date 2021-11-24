@@ -347,8 +347,9 @@ module.exports = class Sessions {
                     console.log('#### send msg =', params);
                     return await client.sendText(params.number + '@c.us', params.text);
                
-                });
+               
                 return { result: "success" }
+                     });
                      }catch(e){
                     return {
                         result: "Erro ao Enviar"
